@@ -73,7 +73,6 @@ class PyExecute:
 
         tree = ast.parse(code)
         for node in ast.walk(tree):
-            print(node)
             if isinstance(node, ast.Name) and node.id in banned_names:
                 raise UnsafeCodeError(node.id)
             if isinstance(node, ast.Attribute) and node.attr in banned_names:
