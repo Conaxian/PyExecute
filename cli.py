@@ -59,7 +59,7 @@ try:
         "exec_time": result.exec_time
     })
     print(json)
+except UnsafeCodeError as err:
+    print(f"UnsafeCodeError: {err.args[0]}", file=sys.stderr)
 except ExecTimeoutError:
     print("ExecTimeoutError", file=sys.stderr)
-except UnsafeCodeError:
-    print("UnsafeCodeError", file=sys.stderr)
