@@ -179,6 +179,7 @@ class _Task:
         """
         Kills the task.
         """
-        kill_signal = signal.CTRL_BREAK_EVENT \
-            if self.executor.win else signal.SIGKILL
-        os.kill(self.pid, kill_signal)
+        kill_command = ["taskkill", "/F", "/PID"] \
+            if self.executor.win else ["kill", str(signal.SIGKILL)]
+        kill_command.append(str(self.pid))
+        subprocess.check_call(kill_command, stdout=subprocess.DEVNULL)
