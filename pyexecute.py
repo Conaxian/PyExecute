@@ -80,7 +80,7 @@ class PyExecutor:
         code = code.strip(" \t\n")
         task = _Task(self, code)
 
-        if not scan:
+        if scan:
             try:
                 self.scan(code)
             except SyntaxError:
