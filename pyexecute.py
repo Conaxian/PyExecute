@@ -182,7 +182,3 @@ class _Task:
         kill_signal = signal.CTRL_BREAK_EVENT \
             if self.executor.win else signal.SIGKILL
         os.kill(self.pid, kill_signal)
-
-executor = PyExecutor("test.py")
-result = executor.execute("while True: print('kekus')")
-print(result.stdout)
