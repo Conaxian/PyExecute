@@ -180,6 +180,6 @@ class _Task:
         Kills the task.
         """
         kill_command = ["taskkill", "/F", "/PID"] \
-            if self.executor.win else ["kill", str(signal.SIGKILL)]
+            if self.executor.win else ["kill", "-" + str(signal.SIGKILL)]
         kill_command.append(str(self.pid))
         subprocess.check_call(kill_command, stdout=subprocess.DEVNULL)
