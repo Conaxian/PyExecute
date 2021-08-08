@@ -51,7 +51,7 @@ args["python_cmd"] = safe_index(sys.argv, 5)
 
 if safe_index(sys.argv, 6): raise ArgCountError
 
-with open(args["filename"], "r") as file:
+with open(args["filename"], "r", encoding="utf-8") as file:
     code = file.read()
 
 executor = PyExecutor(**args)
@@ -60,7 +60,7 @@ try:
     json = dumps({
         "stdout": result.stdout,
         "stderr": result.stderr,
-        "exec_time": result.exec_time
+        "execTime": result.exec_time
     })
     print(json)
 except UnsafeCodeError as err:
