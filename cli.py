@@ -1,3 +1,4 @@
+import os
 import sys
 from json import dumps
 from pyexecute import PyExecutor, ExecTimeoutError, UnsafeCodeError
@@ -42,6 +43,7 @@ scan = False
 
 args["filename"] = safe_index(sys.argv, 1)
 if not args["filename"]: raise ArgCountError
+args["filename"] = os.path.abspath(args["filename"])
 
 scan = safe_index(sys.argv, 2) != "False"
 
