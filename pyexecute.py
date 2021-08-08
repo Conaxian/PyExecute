@@ -74,7 +74,7 @@ class PyExecutor:
         self.python_cmd = python_cmd or \
             ("python" if self.win else "python3")
 
-    def execute(self, code: str, scan: bool=True):
+    def execute(self, code: str, scan: bool=True) -> Result:
         """
         Safely executes Python code.
         """
