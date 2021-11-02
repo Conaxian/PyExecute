@@ -3,7 +3,6 @@ import time
 import ast
 import traceback
 import subprocess
-import signal
 import locale
 from typing import Union
 
