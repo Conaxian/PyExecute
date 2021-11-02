@@ -7,15 +7,13 @@ import locale
 from typing import Union
 
 ALLOWED_MODULES = [
-    "datetime",
     "math",
+    "time",
+    "datetime",
     "random",
     "hashlib",
-    "time",
-    "getpass",
-    "socket",
-    "urllib"
 ]
+
 BANNED_NAMES = [
     "exec",
     "eval",
@@ -31,7 +29,7 @@ BANNED_NAMES = [
     "getattr",
     "delattr",
     "__dict__",
-    "__base__"
+    "__base__",
 ]
 
 class ExecTimeoutError(Exception):
