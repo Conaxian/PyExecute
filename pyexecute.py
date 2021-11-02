@@ -13,6 +13,8 @@ ALLOWED_MODULES = [
     "datetime",
     "random",
     "re",
+    "itertools",
+    "functools",
     "hashlib",
 ]
 
@@ -32,6 +34,7 @@ BANNED_NAMES = [
     "delattr",
     "__dict__",
     "__base__",
+    "__loader__",
 ]
 
 class ExecTimeoutError(Exception):
