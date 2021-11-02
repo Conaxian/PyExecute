@@ -8,9 +8,11 @@ from typing import Union
 
 ALLOWED_MODULES = [
     "math",
+    "types",
     "time",
     "datetime",
     "random",
+    "re",
     "hashlib",
 ]
 
